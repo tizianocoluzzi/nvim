@@ -1,0 +1,8 @@
+## MY NVIM CONFIGURATION ##
+# The file in this repo should be in /.config/nvim #
+## PLUGIN LIST ##
+# nvim-treesitter #
+# nvim-tree for file management#
+# barbar for buffer#
+# toggleterm to use terminal directly in nvim #
+
