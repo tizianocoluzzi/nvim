@@ -3,7 +3,7 @@
 function _G.set_terminal_keymaps()
     local opts = {noremap = false}
     vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
-    vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-w>k]], opts)
+    vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
 end
 
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
@@ -13,7 +13,9 @@ return{
     config = function()
         require("toggleterm").setup{
             size = 15,
+            shell = vim.o.shell,
             open_mapping = [[<c-\>]],
+            direction = 'horizontal',
         }
     end
 }
