@@ -38,6 +38,9 @@ vim.o.expandtab = true
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 
+--for tabs
+vim.keymap.set('n', '<c-s>', ':vsplit<CR>', opts)
+
 --nvim-tree
 vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>', {})
 
