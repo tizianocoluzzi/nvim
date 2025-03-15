@@ -6,4 +6,9 @@
 - nvim-tree for file management 
 - barbar for buffer
 - toggleterm to use terminal directly in nvim 
+- telescope without particular settings
+
+## DA AGGIUNGERE
+- code suggestion e completion
+- code snippets
 
