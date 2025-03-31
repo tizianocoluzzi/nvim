@@ -7,8 +7,8 @@
 - barbar for buffer
 - toggleterm to use terminal directly in nvim 
 - telescope without particular settings
-
+- lsp-config for language server protocol
+- blinkcmp for auto sugestion
 ## DA AGGIUNGERE
-- code suggestion e completion
 - code snippets
 
