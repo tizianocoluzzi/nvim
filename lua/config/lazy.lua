@@ -1,4 +1,3 @@
---Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -24,6 +23,7 @@ map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
 map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
 
 vim.opt.shell = '/usr/bin/zsh'
+vim.opt.clipboard = "unnamedplus"
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
 -- This is also a good place to setup other settings (vim.opt)
@@ -32,7 +32,8 @@ vim.opt.shell = '/usr/bin/zsh'
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-vim.wo.relativenumber = true
+vim.o.relativenumber = true
+vim.o.number = true
 vim.o.tabstop = 4
 vim.o.expandtab = true
 vim.o.softtabstop = 4
@@ -47,13 +48,22 @@ vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>', {})
 --telescope
 vim.keymap.set('n', '<Leader>t', ':Telescope find_files<CR>', {})
 
+-- per la visualizzazione degli errori in lspconfig
+vim.diagnostic.config({
+    virtual_text = true,
+    signs = true,
+    underline = true,
+})
+
+-- per l'amico AI
+vim.keymap.set('n', '<Leader>a', ':CodeCompanionChat Toggle<cr>', {})
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
     -- import your plugins
     { import = "plugins" },
-  },  
-
+  },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
     install = { colorscheme = { "habamax" } },
