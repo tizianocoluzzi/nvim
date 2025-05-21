@@ -55,9 +55,8 @@ vim.diagnostic.config({
     underline = true,
 })
 
--- per l'amico AI
-vim.keymap.set('n', '<Leader>a', ':CodeCompanionChat Toggle<cr>', {})
-
+-- per la chat con copilot
+vim.keymap.set('n', '<Leader>a', ':CopilotChat<cr>', {})
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
