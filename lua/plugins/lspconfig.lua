@@ -15,11 +15,11 @@ return {
             },
         {'saghen/blink.cmp'},
         },
-        config = function()
-            require("lspconfig").lua_ls.setup {}
-            require("lspconfig").clangd.setup {}
-            require("lspconfig").pyright.setup {}
-            vim.keymap.set('n', '<Leader>f', function() vim.lsp.buf.format() end)
-        end,
+        --config = function()
+        --    require("lspconfig").lua_ls.setup {}
+        --    require("lspconfig").clangd.setup {}
+        --    require("lspconfig").pyright.setup {}
+        --    vim.keymap.set('n', '<Leader>f', function() vim.lsp.buf.format() end)
+        --end,
     }
 }
