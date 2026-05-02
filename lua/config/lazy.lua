@@ -46,7 +46,7 @@ vim.keymap.set('n', '<c-s>', ':vsplit<CR>', opts)
 vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>', {})
 
 --telescope
-vim.keymap.set('n', '<Leader>t', ':Telescope find_files<CR>', {})
+vim.keymap.set('n', '<Leader>t', ':Telescope live_grep<CR>', {})
 
 -- per la visualizzazione degli errori in lspconfig
 vim.diagnostic.config({
