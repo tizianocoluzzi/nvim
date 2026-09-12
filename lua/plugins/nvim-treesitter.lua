@@ -1,17 +1,40 @@
 return {
-   "nvim-treesitter/nvim-treesitter",
-   build = ":TSUpdate",
-   config = function ()
-     local configs = require("nvim-treesitter.configs")
+  "nvim-treesitter/nvim-treesitter",
+  branch = "main",
+  lazy = false,
+  build = ":TSUpdate",
 
-     configs.setup({
-     	ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html", "markdown" },
-          sync_install = false,
-          highlight = { enable = true },
-          indent = { enable = true },
-        })
-    end
- }
+  config = function()
+    require("nvim-treesitter").install({
+      "c",
+      "lua",
+      "vim",
+      "vimdoc",
+      "query",
+      "elixir",
+      "heex",
+      "javascript",
+      "html",
+      "markdown",
+    })
 
-
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = {
+        "c",
+        "lua",
+        "vim",
+        "vimdoc",
+        "query",
+        "elixir",
+        "heex",
+        "javascript",
+        "html",
+        "markdown",
+      },
+      callback = function()
+        vim.treesitter.start()
+      end,
+    })
+  end,
+}
 
