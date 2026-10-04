@@ -16,6 +16,7 @@ return {
       "javascript",
       "html",
       "markdown",
+      "latex",
     })
 
     vim.api.nvim_create_autocmd("FileType", {

@@ -19,8 +19,8 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 --Move to previous/next
-map('n', '<A-,>', '<Cmd>:BufferLineCycleNext<CR>', opts)
-map('n', '<A-.>', '<Cmd>:BufferLineCyclePrev<CR>', opts)
+map('n', '<A-,>', '<Cmd>:BufferLineCyclePrev<CR>', opts)
+map('n', '<A-.>', '<Cmd>:BufferLineCycleNext<CR>', opts)
 
 vim.opt.shell = '/usr/bin/zsh'
 vim.opt.clipboard = "unnamedplus"
@@ -47,7 +47,7 @@ vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>', {})
 
 --telescope
 vim.keymap.set('n', '<Leader>t', ':Telescope live_grep<CR>', {})
-
+vim.keymap.set('n', '<Leader>o', ':Telescope find_files<CR>',{})
 -- per la visualizzazione degli errori in lspconfig
 vim.diagnostic.config({
     virtual_text = true,
