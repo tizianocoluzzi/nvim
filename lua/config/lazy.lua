@@ -67,3 +67,22 @@ require("lazy").setup({
      -- automatically check for plugin updates
     checker = { enabled = true },
 })
+
+-- LSP
+vim.lsp.config("clangd", require("esp32").lsp_config())
+vim.lsp.enable({"lua_ls",
+"clangd",
+"pyright"});
+vim.o.autocomplete = true
+vim.api.nvim_create_autocmd('LspAttach', {
+    callback = function(ev)
+        local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
+        if client:supports_methods('textDocument/completion') then
+            vim.lsp.completion.enable(true, client.id, ev.buf,{autotrigger = trie})
+        end
+    end,
+})
+vim.opt.complete:append('o')
+vim.opt.completeopt = {'menuone', 'noselect'}
+vim.o.pumheight = 5
+vim.o.pumborder = 'rounded'
