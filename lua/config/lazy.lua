@@ -87,3 +87,15 @@ vim.opt.complete:append('o')
 vim.opt.completeopt = {'menuone', 'noselect'}
 vim.o.pumheight = 5
 vim.o.pumborder = 'rounded'
+
+-- terminal
+local Terminal  = require('toggleterm.terminal').Terminal
+local float_term = Terminal:new({ hidden = true, direction = 'float' })
+
+function _float_term_toggle()
+  float_term:toggle()
+end
+
+vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>lua _float_term_toggle()<CR>", {noremap = true, silent = true})
+
+
