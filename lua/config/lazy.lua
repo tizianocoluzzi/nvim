@@ -48,11 +48,12 @@ vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>', {})
 --telescope
 vim.keymap.set('n', '<Leader>t', ':Telescope live_grep<CR>', {})
 vim.keymap.set('n', '<Leader>o', ':Telescope find_files<CR>',{})
+vim.keymap.set('n', '<Leader>k', ':Telescope keymaps<CR>',{})
 -- per la visualizzazione degli errori in lspconfig
 vim.diagnostic.config({
     virtual_text = true,
     signs = true,
-    underline = true,
+    underline = false,
 })
 
 -- Setup lazy.nvim
